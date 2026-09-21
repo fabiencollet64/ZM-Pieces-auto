@@ -2,7 +2,7 @@
 
 Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.config.json` (partie 1), soit d'un texte de page (partie 2). Commande pour recompter à tout moment : `npm run check`.
 
-État au moment de la livraison : **140 occurrences** réparties sur les 12 pages. Une seule valeur de configuration corrigée en efface souvent plusieurs d'un coup (le téléphone apparaît sur toutes les pages, par exemple).
+État au moment de la livraison : **141 occurrences** réparties sur les 12 pages. Une seule valeur de configuration corrigée en efface souvent plusieurs d'un coup (le téléphone apparaît sur toutes les pages, par exemple).
 
 ## 1. Valeurs de `site.config.json`
 
