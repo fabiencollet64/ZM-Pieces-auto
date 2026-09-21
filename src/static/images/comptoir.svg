@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Comptoir (photo à remplacer)">
+  <rect width="800" height="600" fill="#e6e4dd"/>
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="#c9c6bc" stroke-width="3" stroke-dasharray="14 10" rx="12"/>
+  <g fill="#8a8f95" font-family="system-ui, Arial, sans-serif" text-anchor="middle">
+    <text x="50%" y="46%" font-size="34" font-weight="700">Comptoir</text>
+    <text x="50%" y="56%" font-size="22">Photo à remplacer (voir README)</text>
+  </g>
+  <g stroke="#b5b2a8" stroke-width="4" fill="none" stroke-linecap="round">
+    <circle cx="400" cy="450" r="40"/>
+    <path d="M386 450 h28 M400 436 v28"/>
+  </g>
+</svg>

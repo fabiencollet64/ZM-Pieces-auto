@@ -1,0 +1,15 @@
+{
+  "name": "zm-pieces-auto",
+  "version": "1.0.0",
+  "description": "Site vitrine statique de ZM Pièces Auto (Aubervilliers). Aucune dépendance : Node.js suffit pour générer le site.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node build.js --check",
+    "serve": "node build.js && node serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

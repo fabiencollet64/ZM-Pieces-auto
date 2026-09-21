@@ -1,0 +1,95 @@
+{
+  "_aide": "Fichier central des informations du magasin. Toute valeur contenant [À CONFIRMER] est affichée telle quelle sur le site et listée dans A-CONFIRMER.md. Remplacez-la par la vraie valeur, relancez `npm run build` (ou laissez l'hébergeur le faire), et elle se met à jour partout : pages, pied de page, balisage schema.org, llms.txt.",
+
+  "nom": "ZM Pièces Auto",
+  "slogan": "Pièces auto neuves et d'occasion, toutes marques, à Aubervilliers",
+  "description": "ZM Pièces Auto est un magasin de pièces détachées automobiles neuves et d'occasion situé au 61 rue Heurtault à Aubervilliers (93300). Pièces multimarques : alternateurs, batteries, amortisseurs, démarreurs, accessoires.",
+
+  "_aide_siteUrl": "Adresse définitive du site, sans barre oblique finale. Utilisée pour les URL canoniques, le sitemap et Open Graph.",
+  "siteUrl": "https://zm-pieces-auto.pages.dev",
+  "siteUrlConfirme": false,
+
+  "adresse": {
+    "rue": "61 rue Heurtault",
+    "codePostal": "93300",
+    "ville": "Aubervilliers",
+    "departement": "Seine-Saint-Denis",
+    "pays": "FR"
+  },
+
+  "_aide_geo": "Latitude et longitude exactes du magasin (fiche Google > Partager > copier les coordonnées). Laissez null tant que ce n'est pas vérifié : le balisage schema.org les omet alors.",
+  "geo": {
+    "latitude": null,
+    "longitude": null
+  },
+
+  "_aide_telephone": "affichage = tel que le client le voit (ex. 01 23 45 67 89). e164 = format international sans espaces pour les liens tel: (ex. +33123456789). Doit être identique à la fiche Google.",
+  "telephone": {
+    "affichage": "[À CONFIRMER]",
+    "e164": "[À CONFIRMER]"
+  },
+
+  "_aide_whatsapp": "Numéro WhatsApp au format international sans + ni espaces (ex. 33612345678). Utilisé pour les liens wa.me.",
+  "whatsapp": {
+    "affichage": "[À CONFIRMER]",
+    "numero": "[À CONFIRMER]"
+  },
+
+  "email": "[À CONFIRMER]",
+
+  "_aide_horaires": "affichage = lignes montrées sur le site. schema = version machine pour Google (jours en anglais, heures HH:MM). Passez confirme à true une fois les horaires vérifiés : le balisage schema.org ne les publie qu'à ce moment-là.",
+  "horaires": {
+    "confirme": false,
+    "affichage": [
+      { "jours": "Lundi au vendredi", "heures": "[À CONFIRMER]" },
+      { "jours": "Samedi", "heures": "[À CONFIRMER]" },
+      { "jours": "Dimanche", "heures": "[À CONFIRMER]" }
+    ],
+    "schema": [
+      { "jours": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "ouverture": "09:00", "fermeture": "19:00" },
+      { "jours": ["Saturday"], "ouverture": "09:00", "fermeture": "18:00" }
+    ]
+  },
+
+  "garantieOccasion": "[À CONFIRMER]",
+  "moyensPaiement": "[À CONFIRMER]",
+  "marquesDemandees": "[À CONFIRMER]",
+  "montage": "[À CONFIRMER]",
+  "livraison": "[À CONFIRMER]",
+  "reprisePiecesUsagees": "[À CONFIRMER]",
+  "acces": {
+    "transports": "[À CONFIRMER]",
+    "stationnement": "[À CONFIRMER]"
+  },
+
+  "_aide_liens": "Collez les liens exacts. Le lien d'avis se récupère depuis la fiche Google (Demander des avis).",
+  "liens": {
+    "ficheGoogle": "[À CONFIRMER]",
+    "avisGoogle": "[À CONFIRMER]",
+    "itineraireGoogleMaps": "https://www.google.com/maps/dir/?api=1&destination=61+rue+Heurtault+93300+Aubervilliers",
+    "facebook": "",
+    "instagram": ""
+  },
+
+  "_aide_prix": "Fourchette de prix indicative pour schema.org (ex. €, €€).",
+  "fourchettePrix": "€€",
+
+  "zonesDesservies": [
+    { "nom": "Aubervilliers", "trajet": "[À CONFIRMER]" },
+    { "nom": "Saint-Denis", "trajet": "[À CONFIRMER]" },
+    { "nom": "La Courneuve", "trajet": "[À CONFIRMER]" },
+    { "nom": "Pantin", "trajet": "[À CONFIRMER]" },
+    { "nom": "Bobigny", "trajet": "[À CONFIRMER]" },
+    { "nom": "Paris 18e", "trajet": "[À CONFIRMER]" },
+    { "nom": "Paris 19e", "trajet": "[À CONFIRMER]" }
+  ],
+
+  "_aide_mentions": "Informations légales obligatoires sur la page Mentions légales.",
+  "mentionsLegales": {
+    "raisonSociale": "[À CONFIRMER]",
+    "formeJuridique": "[À CONFIRMER]",
+    "siret": "[À CONFIRMER]",
+    "responsablePublication": "[À CONFIRMER]",
+    "hebergeur": "[À CONFIRMER] (Cloudflare Pages, Netlify ou GitHub Pages selon le déploiement)"
+  }
+}

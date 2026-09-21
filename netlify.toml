@@ -1,0 +1,7 @@
+# Configuration Netlify : génère le site avec Node puis publie dist/.
+[build]
+  command = "node build.js"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

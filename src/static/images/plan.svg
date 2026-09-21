@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Plan d'accès schématique, 61 rue Heurtault, Aubervilliers">
+  <rect width="800" height="500" fill="#eef0ea"/>
+  <g stroke="#ffffff" stroke-width="22" stroke-linecap="round" fill="none">
+    <path d="M-20 140 L820 120"/>
+    <path d="M-20 330 L820 360"/>
+    <path d="M170 -20 L210 520"/>
+    <path d="M560 -20 L520 520"/>
+    <path d="M300 130 L380 350"/>
+  </g>
+  <g stroke="#d9dccf" stroke-width="2" fill="none">
+    <path d="M-20 140 L820 120 M-20 330 L820 360 M170 -20 L210 520 M560 -20 L520 520 M300 130 L380 350"/>
+  </g>
+  <g fill="#7a8088" font-family="system-ui, Arial, sans-serif" font-size="16">
+    <text x="600" y="112" transform="rotate(-1.4 600 112)">rue Heurtault</text>
+    <text x="40" y="320">Aubervilliers</text>
+  </g>
+  <g transform="translate(400 225)">
+    <path d="M0 -70 C-30 -70 -48 -48 -48 -24 C-48 10 0 60 0 60 C0 60 48 10 48 -24 C48 -48 30 -70 0 -70Z" fill="#b83c0a" stroke="#fff" stroke-width="5"/>
+    <circle cx="0" cy="-26" r="16" fill="#fff"/>
+  </g>
+  <g font-family="system-ui, Arial, sans-serif" text-anchor="middle">
+    <rect x="240" y="300" width="320" height="64" rx="12" fill="#1f2428"/>
+    <text x="400" y="327" fill="#fff" font-size="18" font-weight="700">ZM Pièces Auto</text>
+    <text x="400" y="350" fill="#d5d9dd" font-size="15">61 rue Heurtault, 93300 Aubervilliers</text>
+  </g>
+</svg>
