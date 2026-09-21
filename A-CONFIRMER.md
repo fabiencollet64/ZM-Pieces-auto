@@ -2,7 +2,7 @@
 
 Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.config.json` (partie 1), soit d'un texte de page (partie 2). Commande pour recompter à tout moment : `npm run check`.
 
-État au moment de la livraison : **76 occurrences** réparties sur les 12 pages. Une seule valeur de configuration corrigée en efface souvent plusieurs d'un coup (le téléphone apparaît sur toutes les pages, par exemple).
+État au moment de la livraison : **75 occurrences** réparties sur les 12 pages. Une seule valeur de configuration corrigée en efface souvent plusieurs d'un coup (le téléphone apparaît sur toutes les pages, par exemple).
 
 ## 1. Valeurs de `site.config.json`
 
@@ -23,7 +23,7 @@ Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.conf
 | `acces.transports` | Contact, FAQ | Lignes de métro, RER, tram, bus les plus proches. |
 | `acces.stationnement` | Contact, FAQ | Parking ou stationnement possible devant le magasin ? |
 | `liens.ficheGoogle` | Accueil (avis), contact, schema.org `sameAs`, llms.txt | **Renseigné** : https://share.google/tUxVZmOzn8BOxeePi. |
-| `liens.avisGoogle` | Accueil (bouton « Laisser un avis ») | Lien court « Laisser un avis » fourni par Google (fiche Google > Demander des avis). |
+| `liens.avisGoogle` | Accueil (bouton « Laisser un avis ») | **Renseigné** : lien Google qui ouvre la fenêtre « Rédiger un avis ». |
 | `avis.selection` | Accueil (témoignages) | Copier les meilleurs avis de la fiche Google (auteur, note, date, texte). La fiche compte 23 avis, moyenne 3,3/5, non affichée sur le site. |
 | `liens.facebook`, `liens.instagram` | schema.org `sameAs` (facultatif) | Pages réseaux sociaux si elles existent. |
 | `fourchettePrix` | schema.org | Gamme de prix indicative (`€`, `€€`). Valeur provisoire : `€€`. |
