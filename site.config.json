@@ -25,8 +25,8 @@
 
   "_aide_telephone": "affichage = tel que le client le voit (ex. 01 23 45 67 89). e164 = format international sans espaces pour les liens tel: (ex. +33123456789). Doit être identique à la fiche Google.",
   "telephone": {
-    "affichage": "[À CONFIRMER]",
-    "e164": "[À CONFIRMER]"
+    "affichage": "01 75 34 97 41",
+    "e164": "+33175349741"
   },
 
   "_aide_whatsapp": "Numéro WhatsApp au format international sans + ni espaces (ex. 33612345678). Utilisé pour les liens wa.me.",
@@ -39,20 +39,20 @@
 
   "_aide_horaires": "affichage = lignes montrées sur le site. schema = version machine pour Google (jours en anglais, heures HH:MM). Passez confirme à true une fois les horaires vérifiés : le balisage schema.org ne les publie qu'à ce moment-là.",
   "horaires": {
-    "confirme": false,
+    "confirme": true,
     "affichage": [
-      { "jours": "Lundi au vendredi", "heures": "[À CONFIRMER]" },
-      { "jours": "Samedi", "heures": "[À CONFIRMER]" },
-      { "jours": "Dimanche", "heures": "[À CONFIRMER]" }
+      { "jours": "Lundi au vendredi", "heures": "9h30 à 18h00" },
+      { "jours": "Samedi", "heures": "9h30 à 16h00" },
+      { "jours": "Dimanche", "heures": "Fermé" }
     ],
     "schema": [
-      { "jours": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "ouverture": "09:00", "fermeture": "19:00" },
-      { "jours": ["Saturday"], "ouverture": "09:00", "fermeture": "18:00" }
+      { "jours": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "ouverture": "09:30", "fermeture": "18:00" },
+      { "jours": ["Saturday"], "ouverture": "09:30", "fermeture": "16:00" }
     ]
   },
 
   "garantieOccasion": "[À CONFIRMER]",
-  "moyensPaiement": "[À CONFIRMER]",
+  "moyensPaiement": "carte bancaire et paiement mobile sans contact (espèces : [À CONFIRMER])",
   "marquesDemandees": "[À CONFIRMER]",
   "montage": "[À CONFIRMER]",
   "livraison": "[À CONFIRMER]",
@@ -64,7 +64,7 @@
 
   "_aide_liens": "Collez les liens exacts. Le lien d'avis se récupère depuis la fiche Google (Demander des avis).",
   "liens": {
-    "ficheGoogle": "[À CONFIRMER]",
+    "ficheGoogle": "https://share.google/tUxVZmOzn8BOxeePi",
     "avisGoogle": "[À CONFIRMER]",
     "itineraireGoogleMaps": "https://www.google.com/maps/dir/?api=1&destination=61+rue+Heurtault+93300+Aubervilliers",
     "facebook": "",
@@ -84,12 +84,20 @@
     { "nom": "Paris 19e", "trajet": "[À CONFIRMER]" }
   ],
 
+  "_aide_avis": "Avis clients affichés sur la page d'accueil. Copiez ici les meilleurs avis de la fiche Google, tels quels (prénom ou nom affiché, note sur 5, date, texte). Une liste vide masque le bloc de témoignages et ne laisse que les liens vers la fiche. La note moyenne n'est pas affichée sur le site (afficherNote = false).",
+  "avis": {
+    "noteMoyenne": "3,3",
+    "nombre": 23,
+    "afficherNote": false,
+    "selection": []
+  },
+
   "_aide_mentions": "Informations légales obligatoires sur la page Mentions légales.",
   "mentionsLegales": {
-    "raisonSociale": "[À CONFIRMER]",
-    "formeJuridique": "[À CONFIRMER]",
-    "siret": "[À CONFIRMER]",
-    "responsablePublication": "[À CONFIRMER]",
+    "raisonSociale": "Z.M PIECES AUTO",
+    "formeJuridique": "SAS au capital de 5 000 €",
+    "siret": "815 082 367 00013",
+    "responsablePublication": "Rachid Moulai Ali, président [À CONFIRMER]",
     "hebergeur": "[À CONFIRMER] (Cloudflare Pages, Netlify ou GitHub Pages selon le déploiement)"
   }
 }

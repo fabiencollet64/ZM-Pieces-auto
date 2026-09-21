@@ -628,6 +628,41 @@ ol {
 }
 
 /* Avis */
+.temoignages {
+  margin-bottom: 1.25rem;
+}
+
+.temoignage {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.temoignage-note {
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.temoignage p:nth-of-type(2) {
+  flex: 1;
+}
+
+.temoignage footer {
+  font-size: 0.9rem;
+  color: var(--texte-doux);
+}
+
+.temoignage cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--texte);
+}
+
 .avis-bloc {
   background: var(--surface);
   border: 1px solid var(--bordure);

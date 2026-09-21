@@ -105,8 +105,23 @@ export default {
 
 <section class="section container" aria-labelledby="avis-titre">
   <h2 id="avis-titre">Avis clients</h2>
+  ${
+    c.avis && c.avis.selection.length
+      ? `<div class="grille-3 temoignages">
+    ${c.avis.selection
+      .map(
+        (a) => `<blockquote class="temoignage">
+      <p class="temoignage-note" aria-label="${esc(a.note)} sur 5">${'★'.repeat(Number(a.note) || 5)}${'☆'.repeat(5 - (Number(a.note) || 5))}</p>
+      <p>${esc(a.texte)}</p>
+      <footer><cite>${esc(a.auteur)}</cite>${a.date ? `, avis Google, ${esc(a.date)}` : ', avis Google'}</footer>
+    </blockquote>`
+      )
+      .join('\n    ')}
+  </div>`
+      : ''
+  }
   <div class="avis-bloc">
-    <p>Les avis de nos clients sont publiés sur notre fiche Google. Vous êtes déjà venu au magasin ? Votre avis aide les automobilistes du secteur à nous trouver.</p>
+    <p>${c.avis && c.avis.selection.length ? 'Retrouvez tous les avis sur notre fiche Google.' : 'Les avis de nos clients sont publiés sur notre fiche Google.'} Vous êtes déjà venu au magasin ? Votre avis aide les automobilistes du secteur à nous trouver.</p>
     <div class="cta-group">
       ${
         estConfirme(c.liens.ficheGoogle)

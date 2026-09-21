@@ -2,35 +2,34 @@
 
 Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.config.json` (partie 1), soit d'un texte de page (partie 2). Commande pour recompter à tout moment : `npm run check`.
 
-État au moment de la livraison : **141 occurrences** réparties sur les 12 pages. Une seule valeur de configuration corrigée en efface souvent plusieurs d'un coup (le téléphone apparaît sur toutes les pages, par exemple).
+État au moment de la livraison : **76 occurrences** réparties sur les 12 pages. Une seule valeur de configuration corrigée en efface souvent plusieurs d'un coup (le téléphone apparaît sur toutes les pages, par exemple).
 
 ## 1. Valeurs de `site.config.json`
 
 | Clé | Où elle apparaît | Question à poser au magasin |
 |---|---|---|
 | `siteUrl` (+ `siteUrlConfirme`) | URL canoniques, sitemap, Open Graph, llms.txt | Quelle est l'adresse définitive du site ? (Valeur actuelle : `https://fabiencollet64.github.io/ZM-Pieces-auto`, l'adresse GitHub Pages) |
-| `telephone.affichage`, `telephone.e164` | Toutes les pages (pied de page, bouton Appeler, contact, schema.org, llms.txt) | Numéro de téléphone fixe du magasin, identique à la fiche Google. |
+| `telephone.affichage`, `telephone.e164` | Toutes les pages | **Renseigné** : 01 75 34 97 41 (annuaires). Vérifier qu'il est identique à la fiche Google. |
 | `whatsapp.affichage`, `whatsapp.numero` | Tous les boutons WhatsApp, formulaire de demande, contact, llms.txt | Numéro WhatsApp (professionnel de préférence). |
 | `email` | Contact, mentions légales, schema.org, llms.txt | Adresse email de contact. |
-| `horaires.affichage` (+ `horaires.schema`, `horaires.confirme`) | Accueil, contact, pied de page, FAQ, schema.org, llms.txt | Horaires jour par jour, y compris samedi et dimanche. |
+| `horaires.affichage` (+ `horaires.schema`, `horaires.confirme`) | Accueil, contact, pied de page, FAQ, schema.org, llms.txt | **Renseigné** : lundi au vendredi 9h30 à 18h00, samedi 9h30 à 16h00, dimanche fermé (source : annuaires reprenant la fiche Google). D'autres annuaires indiquent des horaires différents : vérifier sur la fiche Google. |
 | `geo.latitude`, `geo.longitude` | schema.org (omis tant que `null`) | Coordonnées GPS exactes (fiche Google > Partager). |
 | `garantieOccasion` | Accueil, pièces d'occasion, FAQ, llms.txt | Y a-t-il une garantie sur les pièces d'occasion ? Durée, conditions ? Indice : le panneau au comptoir (visible sur les photos) indique que les pièces mécaniques d'occasion ne sont pas remboursables mais donnent lieu à un avoir, et que les pièces électriques d'occasion ne sont ni garanties, ni échangeables, ni remboursables. À confirmer avec le gérant avant de l'écrire sur le site. |
-| `moyensPaiement` | FAQ, llms.txt | Espèces, carte bancaire, virement, chèque ? |
+| `moyensPaiement` | FAQ, llms.txt | **Partiellement renseigné** : carte bancaire et paiement mobile sans contact (fiche Google). Espèces, chèque, virement ? |
 | `marquesDemandees` | Accueil, FAQ | Marques de véhicules les plus demandées (ex. Peugeot, Renault, Volkswagen...). |
 | `montage` | Accueil (indirect), FAQ, amortisseurs, llms.txt | Le magasin monte-t-il les pièces, ou oriente-t-il vers un garage ? |
 | `livraison` | Accueil, zone desservie, FAQ, llms.txt | Livraison ou expédition possibles ? Dans quel rayon ? |
 | `reprisePiecesUsagees` | FAQ | Reprise des pièces usagées (ancien alternateur, batterie...) ? |
 | `acces.transports` | Contact, FAQ | Lignes de métro, RER, tram, bus les plus proches. |
 | `acces.stationnement` | Contact, FAQ | Parking ou stationnement possible devant le magasin ? |
-| `liens.ficheGoogle` | Accueil (avis), contact, schema.org `sameAs`, llms.txt | Lien de la fiche Google Business Profile. |
-| `liens.avisGoogle` | Accueil (bouton « Laisser un avis ») | Lien court « Laisser un avis » fourni par Google. |
+| `liens.ficheGoogle` | Accueil (avis), contact, schema.org `sameAs`, llms.txt | **Renseigné** : https://share.google/tUxVZmOzn8BOxeePi. |
+| `liens.avisGoogle` | Accueil (bouton « Laisser un avis ») | Lien court « Laisser un avis » fourni par Google (fiche Google > Demander des avis). |
+| `avis.selection` | Accueil (témoignages) | Copier les meilleurs avis de la fiche Google (auteur, note, date, texte). La fiche compte 23 avis, moyenne 3,3/5, non affichée sur le site. |
 | `liens.facebook`, `liens.instagram` | schema.org `sameAs` (facultatif) | Pages réseaux sociaux si elles existent. |
 | `fourchettePrix` | schema.org | Gamme de prix indicative (`€`, `€€`). Valeur provisoire : `€€`. |
 | `zonesDesservies[].trajet` (7 villes) | Page Zone desservie | Temps de trajet approximatif en voiture depuis chaque ville. |
-| `mentionsLegales.raisonSociale` | Mentions légales | Nom juridique de l'entreprise. |
-| `mentionsLegales.formeJuridique` | Mentions légales | SARL, SAS, EI, micro-entreprise... |
-| `mentionsLegales.siret` | Mentions légales | Numéro SIRET. |
-| `mentionsLegales.responsablePublication` | Mentions légales | Nom du gérant ou responsable. |
+| `mentionsLegales.raisonSociale`, `formeJuridique`, `siret` | Mentions légales | **Renseigné** depuis le registre des entreprises : Z.M PIECES AUTO, SAS au capital de 5 000 €, SIRET 815 082 367 00013 (SIREN 815 082 367, créée le 2 novembre 2015). |
+| `mentionsLegales.responsablePublication` | Mentions légales | Registre : Rachid Moulai Ali, président. À confirmer avec l'intéressé. |
 | `mentionsLegales.hebergeur` | Mentions légales | Hébergeur retenu (Cloudflare Pages, Netlify ou GitHub Pages) et son adresse. |
 
 ## 2. Textes de pages (à modifier dans `src/pages/`)

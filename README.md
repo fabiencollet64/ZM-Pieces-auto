@@ -35,6 +35,7 @@ Quelques clés importantes :
 | `geo.latitude` / `geo.longitude` | Coordonnées GPS du magasin (fiche Google > Partager). Laissez `null` tant qu'elles ne sont pas vérifiées. |
 | `liens.ficheGoogle` / `liens.avisGoogle` | Lien de la fiche Google et lien « Laisser un avis ». |
 | `zonesDesservies[].trajet` | Temps de trajet approximatif affiché sur la page Zone desservie. |
+| `avis.selection` | Avis clients affichés sur l'accueil : liste d'objets `{ "auteur", "note", "date", "texte" }` recopiés depuis la fiche Google. Liste vide : seuls les liens vers la fiche apparaissent. |
 | `mentionsLegales` | Raison sociale, SIRET, responsable de publication, hébergeur. |
 
 **Important** : le nom, l'adresse et le téléphone doivent être strictement identiques à ceux de la fiche Google.
