@@ -43,13 +43,21 @@ Quelques clés importantes :
 
 Les textes sont dans `src/pages/` (un fichier par page, les quatre pages de pièces sont dans `familles.js`). Modifiez le texte entre les guillemets ou les accents graves, puis régénérez. Règles à respecter : vouvoiement, pas de tiret cadratin (`—`), un seul titre `<h1>` par page. Le script de génération vérifie ces deux derniers points et refuse de publier en cas d'erreur.
 
-### Remplacer les photos
+### Remplacer ou ajouter des photos
 
-Les images dans `src/static/images/` sont des placeholders (`facade.svg`, `comptoir.svg`, `rayonnages.svg`, `pieces.svg`). Pour mettre de vraies photos :
+Les photos sont dans `src/static/images/` au format WebP :
 
-1. Redimensionnez la photo à 800 × 600 pixels et enregistrez-la en WebP (par exemple avec [Squoosh](https://squoosh.app), gratuit, dans le navigateur).
-2. Déposez-la dans `src/static/images/` sous le nom `facade.webp` (ou `comptoir.webp`, etc.).
-3. Dans `src/helpers.js`, fonction `photoPlaceholder`, remplacez `.svg` par `.webp`.
+| Fichier | Contenu | Utilisée sur |
+|---|---|---|
+| `magasin.webp` | Intérieur du magasin (photo réelle) | Accueil (grande image), Contact |
+| `comptoir.webp` | Comptoir et rayons d'alternateurs et de feux (photo réelle) | Accueil, Pièces d'occasion, Contact |
+| `optique.webp` | Optique de phare (photo d'illustration) | Accueil, Pièces neuves |
+| `atelier.webp` | Intervention sous le capot (photo d'illustration) | Accueil, pages Alternateurs, Batteries, Amortisseurs, Démarreurs |
+| `stock.webp` | Rayonnages de pièces (photo d'illustration, non utilisée pour l'instant) | Disponible |
+
+Les photos d'illustration sont signalées comme telles dans leur légende. Remplacez-les dès que possible par des photos du magasin (façade, rayons, pièces), ce qui est plus convaincant pour les clients et pour Google.
+
+Pour remplacer une photo : enregistrez la nouvelle image en WebP (par exemple avec [Squoosh](https://squoosh.app), gratuit, dans le navigateur), environ 800 pixels de large, et déposez-la sous le même nom dans `src/static/images/`. Si les dimensions changent, mettez-les à jour dans la liste `PHOTOS` de `src/helpers.js`. Pour ajouter une photo : ajoutez le fichier, inscrivez-le dans `PHOTOS` avec `reel: true`, puis utilisez `photo('nom', 'légende')` dans la page voulue.
 
 Le plan (`plan.svg`) est un schéma cliquable qui ouvre Google Maps. Vous pouvez le remplacer par une capture d'écran de la carte (800 × 500, WebP) sous le même nom, en adaptant l'extension dans `src/pages/accueil.js` et `src/pages/contact.js`.
 

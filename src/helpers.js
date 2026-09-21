@@ -82,11 +82,27 @@ export function texteBrut(html) {
   return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
-/** Image placeholder neutre (à remplacer par une vraie photo WebP). */
-export function photoPlaceholder(nom, legende, { largeur = 800, hauteur = 600, lazy = true } = {}) {
+/**
+ * Photos du site (fichiers WebP dans src/static/images/).
+ * reel = true : photo prise dans le magasin. false : photo d'illustration, signalée comme telle.
+ * Pour ajouter une photo : déposer le fichier .webp et l'inscrire ici avec ses dimensions.
+ */
+export const PHOTOS = {
+  magasin: { largeur: 564, hauteur: 654, reel: true },
+  comptoir: { largeur: 555, hauteur: 595, reel: true },
+  optique: { largeur: 800, hauteur: 600, reel: false },
+  atelier: { largeur: 800, hauteur: 600, reel: false },
+  stock: { largeur: 800, hauteur: 600, reel: false },
+};
+
+/** Figure avec image WebP, dimensions explicites (pas de saut de mise en page) et légende. */
+export function photo(nom, legende, { lazy = true } = {}) {
+  const p = PHOTOS[nom];
+  if (!p) throw new Error(`Photo inconnue : ${nom} (voir PHOTOS dans src/helpers.js)`);
+  const mention = p.reel ? '' : ' (photo d\'illustration)';
   return `<figure class="photo">
-  <img src="/images/${nom}.svg" width="${largeur}" height="${hauteur}" alt="${esc(legende)}" ${lazy ? 'loading="lazy" decoding="async"' : 'fetchpriority="high"'}>
-  <figcaption>${esc(legende)}</figcaption>
+  <img src="/images/${nom}.webp" width="${p.largeur}" height="${p.hauteur}" alt="${esc(legende)}" ${lazy ? 'loading="lazy" decoding="async"' : 'fetchpriority="high"'}>
+  <figcaption>${esc(legende)}${mention}</figcaption>
 </figure>`;
 }
 

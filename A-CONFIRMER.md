@@ -14,7 +14,7 @@ Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.conf
 | `email` | Contact, mentions légales, schema.org, llms.txt | Adresse email de contact. |
 | `horaires.affichage` (+ `horaires.schema`, `horaires.confirme`) | Accueil, contact, pied de page, FAQ, schema.org, llms.txt | Horaires jour par jour, y compris samedi et dimanche. |
 | `geo.latitude`, `geo.longitude` | schema.org (omis tant que `null`) | Coordonnées GPS exactes (fiche Google > Partager). |
-| `garantieOccasion` | Accueil, pièces d'occasion, FAQ, llms.txt | Y a-t-il une garantie sur les pièces d'occasion ? Durée, conditions ? |
+| `garantieOccasion` | Accueil, pièces d'occasion, FAQ, llms.txt | Y a-t-il une garantie sur les pièces d'occasion ? Durée, conditions ? Indice : le panneau au comptoir (visible sur les photos) indique que les pièces mécaniques d'occasion ne sont pas remboursables mais donnent lieu à un avoir, et que les pièces électriques d'occasion ne sont ni garanties, ni échangeables, ni remboursables. À confirmer avec le gérant avant de l'écrire sur le site. |
 | `moyensPaiement` | FAQ, llms.txt | Espèces, carte bancaire, virement, chèque ? |
 | `marquesDemandees` | Accueil, FAQ | Marques de véhicules les plus demandées (ex. Peugeot, Renault, Volkswagen...). |
 | `montage` | Accueil (indirect), FAQ, amortisseurs, llms.txt | Le magasin monte-t-il les pièces, ou oriente-t-il vers un garage ? |
@@ -51,6 +51,7 @@ Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.conf
 | Demande de pièce | `demande-de-piece.js` | Note affichée tant que le numéro WhatsApp n'est pas renseigné (disparaît automatiquement ensuite). |
 | Contact | `contact.js` | Jours fériés et fermetures exceptionnelles. |
 | Accueil | `accueil.js` | Boutons « Voir les avis Google » et « Laisser un avis » inactifs tant que les liens ne sont pas renseignés (automatique). |
+| Accueil, Pièces neuves, pages famille | `src/static/images/` | Trois photos d'illustration (`optique`, `atelier`, `stock`) à remplacer par des photos du magasin. Une photo de la façade manque encore. |
 
 ## 3. Non inventé, donc absent du site
 

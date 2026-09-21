@@ -1,7 +1,7 @@
 /**
  * Page : /pieces-neuves/
  */
-import { esc, adresseLigne, boutonsCta, blocFaq } from '../helpers.js';
+import { esc, adresseLigne, boutonsCta, blocFaq, photo } from '../helpers.js';
 
 const faq = [
   {
@@ -54,10 +54,15 @@ export default {
 </section>
 
 <section class="section container" aria-labelledby="equipementiers-titre">
-  <h2 id="equipementiers-titre">Marques d'équipementiers</h2>
-  <p>Marques d'équipementiers proposées : <strong>[À CONFIRMER]</strong>. Pour chaque pièce, nous vous indiquons s'il s'agit d'une pièce d'origine ou d'une pièce de qualité équivalente, et vous choisissez.</p>
-  <h2>Neuf ou occasion : comment choisir</h2>
-  <p>Pour les pièces d'usure et de sécurité (freins, batterie, filtres), le neuf est la règle. Pour les organes coûteux d'un véhicule ancien (alternateur, démarreur, carrosserie), <a href="/pieces-occasion/">une pièce d'occasion d'origine</a> est souvent le meilleur rapport qualité prix. Nous vous proposons les deux quand c'est possible.</p>
+  <div class="grille-2 grille-texte-photo">
+    <div>
+      <h2 id="equipementiers-titre">Marques d'équipementiers</h2>
+      <p>Marques d'équipementiers proposées : <strong>[À CONFIRMER]</strong>. Pour chaque pièce, nous vous indiquons s'il s'agit d'une pièce d'origine ou d'une pièce de qualité équivalente, et vous choisissez.</p>
+      <h2>Neuf ou occasion : comment choisir</h2>
+      <p>Pour les pièces d'usure et de sécurité (freins, batterie, filtres), le neuf est la règle. Pour les organes coûteux d'un véhicule ancien (alternateur, démarreur, carrosserie), <a href="/pieces-occasion/">une pièce d'occasion d'origine</a> est souvent le meilleur rapport qualité prix. Nous vous proposons les deux quand c'est possible.</p>
+    </div>
+    ${photo('optique', 'Optique de phare : une pièce souvent remplacée en neuf')}
+  </div>
   ${boutonsCta(c, { message: `Bonjour ${c.nom}, je cherche une pièce neuve pour : marque, modèle, année, motorisation : ... Pièce recherchée : ...` })}
 </section>
 

@@ -1,7 +1,7 @@
 /**
  * Page d'accueil : /
  */
-import { esc, adresseLigne, boutonsCta, photoPlaceholder, lienWhatsApp, messageDemande, estConfirme } from '../helpers.js';
+import { esc, adresseLigne, boutonsCta, photo, lienWhatsApp, messageDemande, estConfirme } from '../helpers.js';
 
 export default {
   path: '/',
@@ -21,7 +21,7 @@ export default {
       ${boutonsCta(c, { libelleWhatsApp: 'Demandez votre pièce sur WhatsApp', classe: 'cta-hero' })}
       <p class="hero-note">Envoyez la marque, le modèle, l'année et la pièce recherchée. Nous vérifions le stock et vous répondons.</p>
     </div>
-    ${photoPlaceholder('facade', `Façade du magasin ${c.nom}, ${c.adresse.rue} à ${c.adresse.ville}`, { lazy: false })}
+    ${photo('magasin', `L'intérieur du magasin ${c.nom}, ${c.adresse.rue} à ${c.adresse.ville}`, { lazy: false })}
   </div>
 </section>
 
@@ -96,9 +96,9 @@ export default {
   <div class="container">
     <h2 id="photos-titre">Le magasin en images</h2>
     <div class="grille-3">
-      ${photoPlaceholder('comptoir', 'Le comptoir du magasin, où nous recherchons votre référence')}
-      ${photoPlaceholder('rayonnages', 'Rayonnages de pièces neuves et d\'occasion')}
-      ${photoPlaceholder('pieces', "Exemples de pièces disponibles : alternateurs, démarreurs, amortisseurs")}
+      ${photo('comptoir', 'Le comptoir du magasin : alternateurs, feux et optiques en rayon')}
+      ${photo('optique', 'Optiques et pièces de carrosserie, neuves ou d\'occasion')}
+      ${photo('atelier', 'Nous vous conseillons sur la pièce à remplacer')}
     </div>
   </div>
 </section>

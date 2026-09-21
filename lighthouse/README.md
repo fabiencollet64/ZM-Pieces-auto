@@ -9,7 +9,7 @@
 | Bonnes pratiques | 100 |
 | SEO | 100 |
 
-Mesures clés : First Contentful Paint 0,9 s, Largest Contentful Paint 1,1 s, Cumulative Layout Shift 0, Total Blocking Time 0 ms, poids total de la page 35 Ko.
+Mesures clés : Largest Contentful Paint 1,8 s (photo d'accueil), Cumulative Layout Shift 0, Total Blocking Time 0 ms, poids total de la page 124 Ko.
 
 Les pages `/demande-de-piece/` et `/faq/` obtiennent les mêmes scores. Les résultats en production dépendent de l'hébergeur (compression, cache) et peuvent varier de quelques points.
 

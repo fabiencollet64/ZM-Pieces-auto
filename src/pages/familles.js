@@ -2,7 +2,7 @@
  * Pages par famille de pièces : /alternateurs/, /batteries/, /amortisseurs/, /demarreurs/
  * Un seul gabarit, des données différentes par famille.
  */
-import { esc, adresseLigne, boutonsCta, blocFaq, liensFamilles, photoPlaceholder } from '../helpers.js';
+import { esc, adresseLigne, boutonsCta, blocFaq, liensFamilles, photo } from '../helpers.js';
 
 const familles = [
   {
@@ -203,7 +203,7 @@ function pageFamille(f) {
       </ul>
       <p>Vous reconnaissez un de ces signes ? Faites vérifier la pièce avant qu'elle ne vous laisse en panne. Nous pouvons vous conseiller au comptoir.</p>
     </div>
-    ${photoPlaceholder('pieces', `${f.pluriel} disponibles au magasin`)}
+    ${photo('atelier', `Remplacement d'${f.genre === 'f' ? 'une' : 'un'} ${f.singulier.toLowerCase()} : faites vérifier la pièce avant la panne`)}
   </div>
 </section>
 

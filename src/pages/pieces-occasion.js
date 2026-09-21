@@ -1,7 +1,7 @@
 /**
  * Page stratégique : /pieces-occasion/
  */
-import { esc, adresseLigne, boutonsCta, blocFaq, photoPlaceholder } from '../helpers.js';
+import { esc, adresseLigne, boutonsCta, blocFaq, photo } from '../helpers.js';
 
 const faq = [
   {
@@ -76,7 +76,7 @@ export default {
       </ul>
       <p>Vous ne voyez pas votre pièce dans cette liste ? Demandez-nous : nous pouvons souvent la trouver.</p>
     </div>
-    ${photoPlaceholder('pieces', "Pièces d'occasion contrôlées, prêtes à être vendues")}
+    ${photo('comptoir', "Alternateurs et feux d'occasion en rayon au magasin")}
   </div>
 </section>
 

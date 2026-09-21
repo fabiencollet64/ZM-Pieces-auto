@@ -1,7 +1,7 @@
 /**
  * Page : /contact/
  */
-import { esc, adresseLigne, estConfirme, lienTel, lienWhatsApp, messageDemande, boutonsCta, photoPlaceholder } from '../helpers.js';
+import { esc, adresseLigne, estConfirme, lienTel, lienWhatsApp, messageDemande, boutonsCta, photo } from '../helpers.js';
 
 export default {
   path: '/contact/',
@@ -64,8 +64,8 @@ export default {
 
 <section class="section container">
   <div class="grille-2">
-    ${photoPlaceholder('facade', `Façade du magasin, ${c.adresse.rue}`)}
-    ${photoPlaceholder('comptoir', 'Le comptoir où nous vous accueillons')}
+    ${photo('magasin', `L'intérieur du magasin, ${c.adresse.rue}`)}
+    ${photo('comptoir', 'Le comptoir où nous vous accueillons')}
   </div>
 </section>
 `,
