@@ -8,7 +8,7 @@ Tout ce qui est marqué `[À CONFIRMER]` sur le site provient soit de `site.conf
 
 | Clé | Où elle apparaît | Question à poser au magasin |
 |---|---|---|
-| `siteUrl` (+ `siteUrlConfirme`) | URL canoniques, sitemap, Open Graph, llms.txt | Quelle est l'adresse définitive du site ? (Valeur provisoire : `https://zm-pieces-auto.pages.dev`) |
+| `siteUrl` (+ `siteUrlConfirme`) | URL canoniques, sitemap, Open Graph, llms.txt | Quelle est l'adresse définitive du site ? (Valeur actuelle : `https://fabiencollet64.github.io/ZM-Pieces-auto`, l'adresse GitHub Pages) |
 | `telephone.affichage`, `telephone.e164` | Toutes les pages (pied de page, bouton Appeler, contact, schema.org, llms.txt) | Numéro de téléphone fixe du magasin, identique à la fiche Google. |
 | `whatsapp.affichage`, `whatsapp.numero` | Tous les boutons WhatsApp, formulaire de demande, contact, llms.txt | Numéro WhatsApp (professionnel de préférence). |
 | `email` | Contact, mentions légales, schema.org, llms.txt | Adresse email de contact. |

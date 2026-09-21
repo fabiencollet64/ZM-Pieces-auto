@@ -7,7 +7,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const dist = path.join(path.dirname(fileURLToPath(import.meta.url)), 'dist');
+const root = path.dirname(fileURLToPath(import.meta.url));
+const dist = path.join(root, 'dist');
+const config = JSON.parse(fs.readFileSync(path.join(root, 'site.config.json'), 'utf8'));
+const basePath = new URL(config.siteUrl).pathname.replace(/\/+$/, '');
 const types = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -26,10 +29,21 @@ const port = Number(process.env.PORT) || 8080;
 http
   .createServer((req, res) => {
     let url = decodeURIComponent(req.url.split('?')[0]);
+    if (basePath) {
+      if (url === '/' || url === basePath) {
+        res.writeHead(302, { Location: basePath + '/' });
+        return res.end();
+      }
+      if (!url.startsWith(basePath + '/')) {
+        res.writeHead(404, { 'Content-Type': types['.html'] });
+        return res.end(fs.readFileSync(path.join(dist, '404.html')));
+      }
+      url = url.slice(basePath.length);
+    }
     let file = path.join(dist, url);
     if (url.endsWith('/')) file = path.join(file, 'index.html');
     if (!fs.existsSync(file) && fs.existsSync(file + '/index.html')) {
-      res.writeHead(301, { Location: url + '/' });
+      res.writeHead(301, { Location: basePath + url + '/' });
       return res.end();
     }
     if (!fs.existsSync(file) || fs.statSync(file).isDirectory()) {
@@ -43,4 +57,4 @@ http
     });
     res.end(fs.readFileSync(file));
   })
-  .listen(port, () => console.log(`Site de test : http://localhost:${port}/`));
+  .listen(port, () => console.log(`Site de test : http://localhost:${port}${basePath}/`));

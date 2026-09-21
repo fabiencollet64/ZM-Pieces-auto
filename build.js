@@ -27,6 +27,19 @@ const checkOnly = process.argv.includes('--check');
 const config = JSON.parse(fs.readFileSync(path.join(root, 'site.config.json'), 'utf8'));
 config.dateBuild = new Date().toISOString().slice(0, 10);
 
+/*
+ * Chemin de base : vide pour un site à la racine (https://example.fr),
+ * "/ZM-Pieces-auto" pour un site GitHub Pages sans nom de domaine.
+ * Tous les liens internes écrits "/..." dans les pages reçoivent ce préfixe.
+ */
+config.siteUrl = config.siteUrl.replace(/\/+$/, '');
+const basePath = new URL(config.siteUrl).pathname.replace(/\/+$/, '');
+
+function prefixerLiens(html) {
+  if (!basePath) return html;
+  return html.replace(/(href|src|content)="\/(?!\/)/g, `$1="${basePath}/`);
+}
+
 /* Nettoyage puis recréation de dist/ */
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
@@ -45,6 +58,15 @@ function copyDir(from, to) {
 
 copyDir(path.join(root, 'src/static'), dist);
 copyDir(path.join(root, 'src/js'), path.join(dist, 'js'));
+
+/* Le manifeste contient aussi des chemins absolus */
+const manifeste = path.join(dist, 'site.webmanifest');
+if (basePath && fs.existsSync(manifeste)) {
+  fs.writeFileSync(manifeste, fs.readFileSync(manifeste, 'utf8').replace(/"\/(?!\/)/g, `"${basePath}/`));
+}
+
+/* GitHub Pages : empêche Jekyll de traiter le dossier */
+fs.writeFileSync(path.join(dist, '.nojekyll'), '');
 
 /* CSS : copie minifiée (commentaires et espaces superflus retirés) */
 fs.mkdirSync(path.join(dist, 'css'), { recursive: true });
@@ -66,7 +88,7 @@ function minifierCss(css) {
 const generated = [];
 for (const page of pages) {
   resoudreFaq(page, config);
-  const html = renderPage(page, config, pages);
+  const html = prefixerLiens(renderPage(page, config, pages));
   const dir = path.join(dist, page.path);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
@@ -74,7 +96,7 @@ for (const page of pages) {
 }
 
 /* Page 404 */
-fs.writeFileSync(path.join(dist, '404.html'), renderNotFound(config, pages));
+fs.writeFileSync(path.join(dist, '404.html'), prefixerLiens(renderNotFound(config, pages)));
 
 /* sitemap.xml */
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -161,6 +183,7 @@ for (const { path: p, html } of generated) {
 }
 
 console.log(`Site généré dans dist/ : ${generated.length} pages + 404, sitemap.xml, robots.txt, llms.txt.`);
+if (basePath) console.log(`Liens internes préfixés par ${basePath}/ (déduit de siteUrl).`);
 if (!config.siteUrlConfirme) {
   console.log(`Attention : siteUrl (${config.siteUrl}) n'est pas confirmé. Mettez la vraie adresse du site dans site.config.json.`);
 }

@@ -28,7 +28,7 @@ Quelques clés importantes :
 
 | Clé | Rôle |
 |---|---|
-| `siteUrl` | Adresse définitive du site (sans `/` final). Passez `siteUrlConfirme` à `true` quand elle est fixée. |
+| `siteUrl` | Adresse où le site est visible (sans `/` final), sous-chemin compris sur GitHub Pages. Passez `siteUrlConfirme` à `true` quand le domaine définitif est fixé. |
 | `telephone.affichage` / `telephone.e164` | Numéro tel qu'affiché, et au format international pour le bouton « Appeler ». |
 | `whatsapp.numero` | Numéro WhatsApp au format international sans `+` ni espaces (ex. `33612345678`). Tous les boutons WhatsApp l'utilisent. |
 | `horaires.affichage` | Horaires affichés sur le site. `horaires.schema` est la version pour Google : passez `horaires.confirme` à `true` une fois vérifiée. |
@@ -62,7 +62,7 @@ Utile pour vérifier avant de publier. Il faut [Node.js](https://nodejs.org) (ve
 ```bash
 npm run build     # génère le site dans le dossier dist/
 npm run check     # idem, et liste tous les [À CONFIRMER] restants
-npm run serve     # génère puis ouvre un serveur de test sur http://localhost:8080
+npm run serve     # génère puis ouvre un serveur de test sur http://localhost:8080 (le sous-chemin de siteUrl est respecté)
 ```
 
 Le dossier `dist/` est le site final : c'est lui qui est mis en ligne.
@@ -92,11 +92,14 @@ Le dépôt doit être sur GitHub. Ensuite, choisissez un hébergeur.
 
 ### GitHub Pages
 
-1. Dans le dépôt GitHub : Settings > Pages > Source : **GitHub Actions**.
-2. Le workflow `.github/workflows/pages.yml` génère et publie le site à chaque envoi sur la branche `main`.
-3. Adresse : `https://<utilisateur>.github.io/<dépôt>/` ou un domaine personnalisé (Settings > Pages > Custom domain). Le fichier `_headers` n'est pas pris en compte par GitHub Pages.
+1. Dans le dépôt GitHub : **Settings > Pages > Build and deployment > Source : « GitHub Actions »**. C'est indispensable : avec « Deploy from a branch », GitHub publie le README du dépôt et non le site.
+2. Le workflow `.github/workflows/pages.yml` génère et publie le site à chaque envoi sur les branches listées dans le fichier (`main` et la branche de développement actuelle). Pour changer de branche, modifiez la liste `branches:` du fichier.
+3. Adresse : `https://<utilisateur>.github.io/<dépôt>/`, soit actuellement `https://fabiencollet64.github.io/ZM-Pieces-auto/`. Vous pouvez suivre la publication dans l'onglet « Actions » du dépôt (une à deux minutes).
+4. Le fichier `_headers` n'est pas pris en compte par GitHub Pages.
 
-Dans tous les cas, mettez ensuite l'adresse définitive dans `site.config.json` (`siteUrl`), sinon les URL canoniques et le sitemap pointent vers la mauvaise adresse.
+**Sous-chemin** : sans nom de domaine, GitHub Pages sert le site sous `/ZM-Pieces-auto/`. Le générateur lit ce sous-chemin dans `siteUrl` (`site.config.json`) et préfixe automatiquement tous les liens internes. Si vous ajoutez un nom de domaine (Settings > Pages > Custom domain), mettez simplement `siteUrl` à `https://www.votre-domaine.fr` : les liens redeviennent à la racine.
+
+Dans tous les cas, `siteUrl` doit être exactement l'adresse où le site est visible, sinon les URL canoniques, le sitemap et les liens internes sont faux.
 
 ## 4. Après la mise en ligne
 

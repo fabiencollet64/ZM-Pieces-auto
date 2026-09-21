@@ -5,8 +5,8 @@
   "slogan": "Pièces auto neuves et d'occasion, toutes marques, à Aubervilliers",
   "description": "ZM Pièces Auto est un magasin de pièces détachées automobiles neuves et d'occasion situé au 61 rue Heurtault à Aubervilliers (93300). Pièces multimarques : alternateurs, batteries, amortisseurs, démarreurs, accessoires.",
 
-  "_aide_siteUrl": "Adresse définitive du site, sans barre oblique finale. Utilisée pour les URL canoniques, le sitemap et Open Graph.",
-  "siteUrl": "https://zm-pieces-auto.pages.dev",
+  "_aide_siteUrl": "Adresse du site, sans barre oblique finale. Utilisée pour les URL canoniques, le sitemap, Open Graph et pour préfixer tous les liens internes. Sur GitHub Pages sans nom de domaine, elle contient le nom du dépôt (ex. https://utilisateur.github.io/depot). Avec un nom de domaine ou sur Cloudflare/Netlify : https://www.example.fr.",
+  "siteUrl": "https://fabiencollet64.github.io/ZM-Pieces-auto",
   "siteUrlConfirme": false,
 
   "adresse": {

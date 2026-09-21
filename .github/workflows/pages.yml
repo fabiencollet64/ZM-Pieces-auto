@@ -1,10 +1,13 @@
-# Déploiement automatique sur GitHub Pages à chaque modification de la branche principale.
-# À activer dans Settings > Pages > Source : "GitHub Actions".
+# Déploiement automatique sur GitHub Pages à chaque modification des branches listées.
+# Réglage obligatoire dans le dépôt : Settings > Pages > Build and deployment > Source : "GitHub Actions".
+# (Avec "Deploy from a branch", GitHub publie le README au lieu du site.)
 name: Déployer sur GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - claude/stoic-cerf-ep2ly3
   workflow_dispatch:
 
 permissions:
@@ -25,6 +28,7 @@ jobs:
         with:
           node-version: 20
       - run: node build.js --check
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
